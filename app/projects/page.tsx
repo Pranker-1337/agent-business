@@ -46,10 +46,11 @@ export default function ProjectsPage() {
   }
 
   function openEditModal(item: StoredProject | StoredGoal) {
-    setModalType("project" in item ? "project" : "goal");
+    const isProject = "name" in item;
+    setModalType(isProject ? "project" : "goal");
     setEditingItem(item);
-    setName(item.name || item.title);
-    setDescription(item.description || "");
+    setName(isProject ? item.name : item.title);
+    setDescription(isProject ? item.description : "");
     setTargetAmount(String(item.targetAmount));
     setCurrentAmount(String(item.currentAmount));
     setDeadline(item.deadline.split("T")[0]);

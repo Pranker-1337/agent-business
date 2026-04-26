@@ -62,7 +62,7 @@ export function analyzeExpenses(finances: StoredFinance[]): {
   }
 
   const topCategories = (Object.entries(byCategory) as [ExpenseCategory, number][])
-    .filter(([cat]) => cat !== "income" && cat !== "savings")
+    .filter(([cat]) => cat !== "savings")
     .map(([category, amount]) => ({
       category,
       amount,

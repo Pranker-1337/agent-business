@@ -123,7 +123,7 @@ export interface FinanceSummary {
 }
 
 export interface AIModelMessage {
-  role: "user" | "model";
+  role: "user" | "assistant" | "model";
   parts: { text: string }[];
 }
 
